@@ -11,7 +11,7 @@ def generate_wave_set(n_support=1000, n_train=25, std=0.3):
     return data
 
 
-data = generate_wave_set()
+data = generate_wave_set(1000, 25)
 
 X = np.array([np.ones(data['x_train'].shape[0]), data['x_train']]).T
 
@@ -24,11 +24,13 @@ margin = 0.3
 plt.plot(data['support'], data['values'], 'b--', alpha=0.5, label='manifold')
 plt.scatter(data['x_train'], data['y_train'], 40, 'g', 'o', alpha=0.8, label='data')
 
+print(data['support'])
+
 plt.plot(data['x_train'], y_hat, 'r', alpha=0.8, label='fitted')
 
 plt.xlim(data['x_train'].min() - margin, data['x_train'].max() + margin)
-plt.xlim(data['y_train'].min() - margin, data['y_train'].max() + margin)
-plt.legend(loc='upper right', prop={'size': 20})
+plt.ylim(data['y_train'].min() - margin, data['y_train'].max() + margin)
+plt.legend(loc='upper right', prop={'size': 10})
 plt.title('Linear regression')
 plt.xlabel('x')
 plt.xlabel('y')
