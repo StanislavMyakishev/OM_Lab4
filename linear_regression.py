@@ -4,10 +4,10 @@ from matplotlib import pyplot as plt
 
 def generate_wave_set(n_support=1000, n_train=25, std=0.3):
     data = {}
-    data['support'] = np.linspace(0, 2 * np.pi, npm=n_support)
+    data['support'] = np.linspace(0, 2 * np.pi, num=n_support)
     data['values'] = np.sin(data['support']) + 1
-    data['x_train'] = np.sort(np.random.choice(data['support'], size=n_train, relpace=True))
-    data['y_train'] = np.sin(data['x_train']) + 1 + np.random.normal(0, std, size=data['x_train'])
+    data['x_train'] = np.sort(np.random.choice(data['support'], size=n_train, replace=True))
+    data['y_train'] = np.sin(data['x_train']) + 1 + np.random.normal(0, std, size=data['x_train'].shape[0])
     return data
 
 
