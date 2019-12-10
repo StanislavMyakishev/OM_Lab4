@@ -24,8 +24,6 @@ margin = 0.3
 plt.plot(data['support'], data['values'], 'b--', alpha=0.5, label='manifold')
 plt.scatter(data['x_train'], data['y_train'], 40, 'g', 'o', alpha=0.8, label='data')
 
-print(data['support'])
-
 plt.plot(data['x_train'], y_hat, 'r', alpha=0.8, label='fitted')
 
 plt.xlim(data['x_train'].min() - margin, data['x_train'].max() + margin)
